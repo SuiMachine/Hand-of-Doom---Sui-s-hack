@@ -3,7 +3,7 @@
  
 # Installation
 * Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
-~~* Download [Sui's Hack](https://github.com/SuiMachine/Hand-of-Doom---Sui-s-hack/releases).~~ For now use Releases folder.
+* ~~Download [Sui's Hack](https://github.com/SuiMachine/Hand-of-Doom---Sui-s-hack/releases).~~ For now use Releases folder.
 * Extract the zip archive and move it to the game's directory, putting **SuisHack.dll** into MelonLoader's Mods directory.
 * While in game press F11 and set the your desired FPS (in the future a config file should be implemented. 
 

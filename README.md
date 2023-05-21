@@ -3,7 +3,7 @@
  
 # Installation
 * Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
-* ~~Download [Sui's Hack](https://github.com/SuiMachine/Hand-of-Doom---Sui-s-hack/releases).~~ For now use Releases folder.
+* Download [Sui's Hack](https://github.com/SuiMachine/Hand-of-Doom---Sui-s-hack/releases).
 * Extract the zip archive and move it to the game's directory, putting **SuisHack.dll** into MelonLoader's Mods directory.
 * While in game press F11 and set the your desired FPS (in the future a config file should be implemented. 
 
@@ -27,6 +27,7 @@ These instructions are written with path assuming you install it on build in dri
 # In depth changes
 * Implemented menu to configure FPS cap using Unity's GUILayout, which tests Unity's TargetFramerate variable.
 * Reworked game's **scr_spin** update behaviour to scale correctly with FPS.
+* Modified Awake of **CharacterController** to write in Vsync count and Target Framerate.
 
 # Requirements
 * The official copy of the game.

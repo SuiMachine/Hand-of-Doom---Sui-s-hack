@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SuisHack.SuisMenu
 {
@@ -7,26 +6,12 @@ namespace SuisHack.SuisMenu
 	{
 		static MenuThing instance;
 		bool displayGUI;
-		bool oldCursorVisible;
-		CursorLockMode oldCursorLock;
 
 		void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.F11))
 			{
 				displayGUI = !displayGUI;
-/*				if (displayGUI)
-				{
-					oldCursorVisible = Cursor.visible;
-					oldCursorLock = Cursor.lockState;
-
-					Cursor.lockState = CursorLockMode.None;
-				}
-				else
-				{
-					Cursor.visible = oldCursorVisible;
-					Cursor.lockState = oldCursorLock;
-				}*/
 			}
 		}
 
@@ -48,12 +33,16 @@ namespace SuisHack.SuisMenu
 				GUILayout.BeginHorizontal();
 				GUILayout.BeginVertical(GUI.skin.box);
 
-				var oldValue = Application.targetFrameRate;
+				GUILayout.Label($"Target framerate {Application.targetFrameRate}");
+				var desiredFPS = (int)GUILayout.HorizontalSlider(Application.targetFrameRate, 0, 240);
+				if (desiredFPS != Application.targetFrameRate)
+					Config.FPS_Limit.Value = desiredFPS;
 
-				GUILayout.Label($"Target framerate {oldValue}");
-				var newValue = (int)GUILayout.HorizontalSlider(oldValue, 0, 120);
-				if (newValue != oldValue)
-					Application.targetFrameRate = (int)newValue;
+				GUILayout.Label($"Vsync count {QualitySettings.vSyncCount}");
+				var desiredVsync = (int)GUILayout.HorizontalSlider(QualitySettings.vSyncCount, 0, 4);
+				if (desiredVsync != QualitySettings.vSyncCount)
+					Config.Vsync_Count.Value = desiredVsync;
+
 				GUILayout.EndVertical();
 				GUILayout.EndHorizontal();
 			}

@@ -79,15 +79,21 @@
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.InputModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuisMenu\MenuThing.cs" />
+    <Compile Include="Timescaling_fixes\CharacterControllerHook.cs" />
     <Compile Include="Timescaling_fixes\scr_spinfix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

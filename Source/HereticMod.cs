@@ -1,4 +1,5 @@
 ﻿using SuisHack;
+using SuisHack.HereticMod_Classes;
 
 public static class HereticMod
 {
@@ -9,9 +10,7 @@ public static class HereticMod
 		if (!Config.UseHereticMod.Value)
 			return;
 
-		Plugin.LogMessage("Initializing Heretic mod!");
-		Plugin.HarmonyInst.PatchAll();
-		Plugin.LogMessage("Heretic mod initialized!");
+		HereticMod_UI_scr_ui_holderScaler.InitializeHook();
 		Initialized = true;
 	}
 }

@@ -27,7 +27,18 @@ namespace SuisHack.HereticMod_Classes.Components
 			Destroy(this.transform.Find("weaponAnimsHider").gameObject);
 			Destroy(this.transform.Find("Image").gameObject);
 			Destroy(this.transform.Find("mapButtons").gameObject);
-			Destroy(this.transform.Find("buttons").gameObject);
+
+			{
+				var buttons = this.transform.Find("buttons").GetComponentsInChildren<Image>();
+				var canvasRenderers = this.transform.Find("buttons").GetComponentsInChildren<CanvasRenderer>();
+
+				foreach (var button in buttons)
+					Destroy(button);
+
+				foreach (var canvasRenderer in canvasRenderers)
+					Destroy(canvasRenderer);
+			}
+
 
 			GameScreen = this.transform.Find("gameScreenHolder/gameScreen").GetComponent<RawImage>();
 			GameCam = FindObjectOfType<scr_CameraFarClipHandler>().GetComponent<Camera>();

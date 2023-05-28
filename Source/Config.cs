@@ -9,7 +9,7 @@ namespace SuisHack
 		public static MelonPreferences_Entry<int> Vsync_Count;
 
 		public static MelonPreferences_Entry<bool> UseHereticMod;
-		public static MelonPreferences_Entry<bool> Heretic_200pRendering;
+		public static MelonPreferences_Entry<bool> Heretic_NativeResolutionRendering;
 		public static MelonPreferences_Entry<float> Heretic_FOV;
 
 
@@ -23,7 +23,7 @@ namespace SuisHack
 
 			var hereticCat = MelonPreferences.CreateCategory("Heretic Mod");
 			UseHereticMod = hereticCat.CreateEntry("Use Mod", false, "Set this to true to use Heretic Mod - this will unlock options that are modifying gameplay and affect aethetic in significent ways");
-			Heretic_200pRendering = hereticCat.CreateEntry("Render at 200p", true, "Makes the game render at 200x150 (or scales the width to a resolution) to preserve original pixelated aesthetic");
+			Heretic_NativeResolutionRendering = hereticCat.CreateEntry("Native resolution rendering", false, "Makes the game render image at screen resolution (this severely changes the game aesthetic!)");
 			Heretic_FOV = hereticCat.CreateEntry("FOV", 70f, "Since the screen size is bigger in heretic, this should also be increased - it is a vertical FOV - 75 is approx. 90 on 4:3 and 107 on 16:9, so it should be optimal.");
 
 		}

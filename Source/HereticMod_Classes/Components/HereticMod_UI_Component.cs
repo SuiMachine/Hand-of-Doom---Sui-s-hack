@@ -64,9 +64,9 @@ namespace SuisHack.HereticMod_Classes.Components
 				Destroy(GameCam.targetTexture);
 			}
 
-			if (Config.Heretic_200pRendering.Value)
+			if (!Config.Heretic_NativeResolutionRendering.Value)
 			{
-				int height = 150;
+				int height = 180;
 				GameCam.aspect = Screen.width * 1f / Screen.height;
 
 				int width = Mathf.FloorToInt(height * 1.0f * GameCam.aspect);

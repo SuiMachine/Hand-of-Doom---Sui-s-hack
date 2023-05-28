@@ -59,6 +59,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
@@ -87,14 +91,24 @@
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="HereticMod_Classes\Components\HereticMod_UI_Component.cs" />
+    <Compile Include="HereticMod.cs" />
+    <Compile Include="HereticMod_Classes\CustomRectUtils.cs" />
+    <Compile Include="HereticMod_Classes\HereticMod_UI_scr_ui_holderScaler.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuisMenu\MenuThing.cs" />
-    <Compile Include="Timescaling_fixes\CharacterControllerHook.cs" />
-    <Compile Include="Timescaling_fixes\scr_spinfix.cs" />
+    <Compile Include="TimescalingFixes\CharacterControllerHook.cs" />
+    <Compile Include="OtherFixes\ResolutionMenuFixes.cs" />
+    <Compile Include="TimescalingFixes\scr_spinfix.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

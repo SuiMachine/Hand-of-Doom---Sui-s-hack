@@ -5,16 +5,21 @@ namespace SuisHack
 	public class Plugin : MelonMod
 	{
 		private static MelonLogger.Instance loggerInstance;
+		public static HarmonyLib.Harmony HarmonyInst { get; private set; }
 
 		public override void OnInitializeMelon()
 		{
 			base.OnInitializeMelon();
 			loggerInstance = LoggerInstance;
+			HarmonyInst = HarmonyInstance;
 			Config.Init();
 
-			LoggerInstance.Msg("Patching");
-			HarmonyInstance.PatchAll();
-			LoggerInstance.Msg("Patched");
+			LoggerInstance.Msg("Patching methods");
+			InitializeFPSFix();
+			OtherFixes.ResolutionFixes.Initialize();
+			LoggerInstance.Msg("Done - stuff should be better now");
+
+			HereticMod.Initialize();
 		}
 
 		public override void OnLateInitializeMelon()
@@ -31,6 +36,12 @@ namespace SuisHack
 		public static void LogError(object obj)
 		{
 			loggerInstance.Error(obj);
+		}
+
+		public void InitializeFPSFix()
+		{
+			Timescaling_fixes.CharacterControllerHook.Initialize();
+			Timescaling_fixes.scr_spinfix.Initialize();
 		}
 	}
 }

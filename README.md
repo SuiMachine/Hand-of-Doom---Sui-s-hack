@@ -28,6 +28,7 @@ These instructions are written with path assuming you install it on build in dri
 * Implemented menu to configure FPS cap using Unity's GUILayout, which tests Unity's TargetFramerate variable.
 * Reworked game's **scr_spin** update behaviour to scale correctly with FPS.
 * Modified Awake of **CharacterController** to write in Vsync count and Target Framerate.
+* Implemented a component that gets added to canvas used for displaying resolution which checks references in ResolutionMenu object and corrects them if they are null, which should make Video settings usable while in-game (and not just in main menu).
 
 # Requirements
 * The official copy of the game.

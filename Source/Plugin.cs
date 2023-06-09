@@ -17,6 +17,7 @@ namespace SuisHack
 			LoggerInstance.Msg("Patching methods");
 			InitializeFPSFix();
 			OtherFixes.ResolutionFixes.Initialize();
+			OtherFixes.scr_essentialsManagerFixes.Initialize();
 			LoggerInstance.Msg("Done - stuff should be better now");
 
 			HereticMod.Initialize();

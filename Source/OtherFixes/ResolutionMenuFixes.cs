@@ -13,13 +13,17 @@ namespace SuisHack.OtherFixes
 			if (Initialized)
 				return;
 
-			var sourceClassType = typeof(ResolutionMenu);
-			var sourceMethod = sourceClassType.GetMethod("CreateResolutionDropdown", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			{
+				var sourceClassType = typeof(ResolutionMenu);
+				var sourceMethod = sourceClassType.GetMethod("CreateResolutionDropdown", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
-			var targetClassType = typeof(ResolutionFixes);
-			var targetMethod = new HarmonyMethod(targetClassType.GetMethod(nameof(CreateResolutionDropdownFixed), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static));
+				var targetClassType = typeof(ResolutionFixes);
+				var targetMethod = new HarmonyMethod(targetClassType.GetMethod(nameof(CreateResolutionDropdownFixed), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static));
 
-			Plugin.HarmonyInst.Patch(sourceMethod, prefix: targetMethod);
+				Plugin.HarmonyInst.Patch(sourceMethod, prefix: targetMethod);
+
+			}
+
 			Initialized = true;
 		}
 

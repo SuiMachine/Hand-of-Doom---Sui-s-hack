@@ -18,6 +18,7 @@ namespace SuisHack.HereticMod_Classes
 			var targetClassType = typeof(HereticMod_UI_scr_ui_holderScaler);
 			var targetMethod = new HarmonyMethod(targetClassType.GetMethod(nameof(StartPostfix), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static));
 
+
 			Plugin.HarmonyInst.Patch(sourceMethod, postfix: targetMethod);
 			Initialized = true;
 		}

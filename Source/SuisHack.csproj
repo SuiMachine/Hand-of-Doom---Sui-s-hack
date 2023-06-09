@@ -51,6 +51,10 @@
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\MelonLoader\net35\MelonStartScreen.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\Rewired_Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -95,13 +99,20 @@
       <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.UIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>H:\Steam\steamapps\common\Hand of Doom\Hand of Doom_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="HereticMod_Classes\Components\HereticMod_UI_Component.cs" />
     <Compile Include="HereticMod.cs" />
     <Compile Include="HereticMod_Classes\CustomRectUtils.cs" />
+    <Compile Include="HereticMod_Classes\HereticMod_CharacterController.cs" />
     <Compile Include="HereticMod_Classes\HereticMod_UI_scr_ui_holderScaler.cs" />
+    <Compile Include="OtherFixes\ResolutionFixComponent.cs" />
+    <Compile Include="OtherFixes\scr_essentialsManagerFixes.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuisMenu\MenuThing.cs" />

@@ -11,6 +11,7 @@ public static class HereticMod
 			return;
 
 		HereticMod_UI_scr_ui_holderScaler.InitializeHook();
+		HereticMod_CharacterController.Initialize();
 		Initialized = true;
 	}
 }

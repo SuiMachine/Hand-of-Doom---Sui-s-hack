@@ -17,7 +17,7 @@ namespace SuisHack.HereticMod_Classes
 			var sourceMethod = sourceClass.GetMethod("Update", BindingFlags.Instance | BindingFlags.NonPublic);
 
 			var targetClass = typeof(HereticMod_CharacterController);
-			var targetMethod = new HarmonyLib.HarmonyMethod(targetClass.GetMethod("UpdateHooked", BindingFlags.Static | BindingFlags.NonPublic));
+			var targetMethod = new HarmonyLib.HarmonyMethod(targetClass.GetMethod(nameof(UpdateHooked), BindingFlags.Static | BindingFlags.NonPublic));
 
 			Initialized = true;
 			Plugin.HarmonyInst.Patch(sourceMethod, prefix: targetMethod);

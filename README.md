@@ -1,3 +1,5 @@
+This is now obsolete - the developers have implemented their own solution at this point and so this project is now archived.
+
 # Hand of Doom - Sui's Hack
  A hack for Hand of Doom, which should allow to play the game at more than 25 fps. Currently only for testing purposes.
  
